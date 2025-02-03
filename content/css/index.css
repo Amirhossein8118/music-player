@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #304352, #d7d2cc);
+}
+
+.card::after,
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: all 1s;
+    z-index: -1;
+}
+
+.playing.card::before {
+    transform: rotate(20deg) !important;
+    box-shadow: 0 2px rgba(0, 0, 0,0.2) !important;
+}
+
+.playing.card::after {
+    transform: rotate(10deg) !important;
+    box-shadow: 0 2px rgba(0, 0, 0,0.2) !important;
+}
+ 
+.playing .imgBox {
+    transition: 1s;
+    bottom: 80px;
+}
+
+.playing .imgBox .on-img-play{
+    transition: 1s;
+    display: none;
+}
+
+.animated {
+    animation: shuffle 0.5s ease-in-out;
+}
+
+@keyframes shuffle {
+    0% {
+        transform: rotate3d(0 ,0 , 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(1 , 0 , 0 , 360deg);
+    }
+}
+
+.closeAnimates {
+    animation: shuffleClose 0.5s ease-in-out;
+}
+@keyframes shuffleClose {
+    0% {
+        transform: rotate3d(0 ,0 , 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(1 , 0 , 0 , -360deg);
+    }
+}
