@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="./content/js/app.js"></script>
+  <link rel="stylesheet" href="./content/css/index.css" />
+  <link rel="shortcut icon" href="content/images/pause.png" type="image/x-icon">
+  <title>music player</title>
+</head>
+
+<body class="relative flex justify-center items-center h-screen">
+  <audio src="content/musices/yadet-nare.mp3" id="audio"></audio>
+  <section class="card relative w-[30rem] h-[30rem] bg-white shadow-lg rounded-md">
+    <section class="imgBox absolute top-2.5 bottom-2.5 left-2.5 right-2.5 bg-black duration-1000 z-10">
+      <img src="./content/cover/yadet-nare.jpg" class="music-cover absolute left-0 w-full h-full object-cover">
+      <div class="on-img-play duration-500 bg-gray-400 opacity-50 rounded-full h-16 w-16 absolute bottom-4 left-4 flex justify-center items-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+      </svg>
+      </div>
+    </section>
+    <section class="flex justify-center items-center gap-4 absolute left-2 bottom-2 right-2 text-center h-16">
+      <div class="playlist-btn cursor-pointer w-5 absolute right-3 top-0 bottom-0 flex flex-col justify-center items-end gap-1.5 *:bg-black *:w-1 *:h-1 *:rounded-full *:duration-700">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="relative cursor-pointer">
+        <img src="content/images/repeat.png" alt="repeat" id="repeat" title="repeat">
+        <i class="on-repeat absolute top-2 left-3 text-xs font-bold z-10 hidden">1</i>
+      </div>
+      <img src="content/images/back.png" alt="back" id="back" title="back" class="cursor-pointer">
+      <img src="content/images/pause.png" alt="pause" id="pause" title="pause" class="cursor-pointer">
+      <img src="content/images/next.png" alt="next" id="next" title="next" class="cursor-pointer">
+      <img src="content/images/shuffle.png" alt="shuffle" id="shuffle" title="shuffle" class="closeAnimates cursor-pointer">
+    </section>
+  </section>
+  <section class="playlist-container absolute -left-full top-0 bottom-0 flex flex-col justify-start items-center gap-3 w-80 bg-white box-shadow-xl duration-700 z-50">
+    <div class="w-3/4 h-16 flex justify-center items-center p-5 text-xl font-bold border-b-2">playlist</div>
+    <div class="tracks-container w-full h-3/4 overflow-y-auto"></div>
+  </section>
+</body>
+</html>
