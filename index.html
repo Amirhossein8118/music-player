@@ -12,10 +12,15 @@
   <title>music player</title>
 </head>
 
-<body class="relative flex justify-center items-center h-screen">
+<body class="relative flex justify-center items-center h-screen overflow-hidden">
   <audio src="content/musices/yadet-nare.mp3" id="audio"></audio>
   <section class="card relative w-[30rem] h-[30rem] bg-white shadow-lg rounded-md">
     <section class="imgBox absolute top-2.5 bottom-2.5 left-2.5 right-2.5 bg-black duration-1000 z-10">
+      <div class="onImg-playlist-btn cursor-pointer w-5 absolute right-4 top-4 z-10 flex-col justify-center items-end gap-1.5 *:bg-black *:w-1 *:h-1 *:rounded-full *:duration-700">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
       <img alt="music cover" src="content/cover/yadet-Nare.jpg" class="music-cover absolute left-0 w-full h-full object-cover">
       <div class="on-img-play duration-500 bg-gray-400 opacity-50 rounded-full h-16 w-16 absolute bottom-4 left-4 flex justify-center items-center cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-10">
