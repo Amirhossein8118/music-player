@@ -17,7 +17,7 @@ let mainMusicList = [
     {
         name: "yadet nareya",
         artist: "Poori",
-        cover: "content/cover/yadet-nare.jpg",
+        cover: "content/cover/yadet-Nare.jpg",
         music: "content/musices/yadet-nare.mp3",
     },
     {
