@@ -12,6 +12,7 @@ const shuffleElem = $.getElementById("shuffle");
 const playListBtn = $.querySelector(".playlist-btn");
 const playlistContainer = $.querySelector(".playlist-container");
 const tracksContainer = $.querySelector(".tracks-container");
+const onImgPlaylistBtn = $.querySelector(".onImg-playlist-btn");
 
 let mainMusicList = [
     {
@@ -53,6 +54,7 @@ var currentMusicIndex = { value: 0 };
 onImgPlayElem.addEventListener("click", () => {
     audio.play();
     cardElem.classList.add("playing");
+    onImgPlaylistBtn.classList.remove('flex');
     paused = false;
 });
 
@@ -60,10 +62,10 @@ paused = false;
 pauseElem.addEventListener("click", () => {
     if (paused) {
         audio.play();
-        cardElem.classList.add("playing");
         paused = false;
     } else {
         audio.pause();
+        onImgPlaylistBtn.classList.add('flex')
         cardElem.classList.remove("playing");
         paused = true;
     };
@@ -174,6 +176,8 @@ function refreshPlaylist() {
             musicCover.src = musicList[currentMusicIndex.value].cover;
             audio.currentTime = 0;
             audio.play();
+            cardElem.classList.add("playing");
+            paused = false;
             tracks.forEach((item) =>{
                 item.firstElementChild.firstElementChild.firstElementChild.classList.remove('brightness-50');
                 item.firstElementChild.lastElementChild.classList.remove('!opacity-100');
@@ -190,6 +194,12 @@ function refreshPlaylist() {
         }
     });
 };
+
+onImgPlaylistBtn.addEventListener("click", () => {
+    refreshPlaylist();
+    playListBtn.classList.toggle("*:w-full");
+    playlistContainer.classList.toggle('!left-0');
+})
 
 playListBtn.addEventListener("click", () => {
     refreshPlaylist();
