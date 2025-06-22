@@ -148,9 +148,9 @@ shuffleElem.addEventListener("click", () => {
 
 function refreshPlaylist() {
     tracksContainer.innerHTML = "";
-    musicList.forEach((item) => {
+    musicList.forEach((item , index) => {
         tracksContainer.innerHTML += `
-        <div class="track w-full h-20 flex justify-start items-center gap-3 border-b-2 p-3 group cursor-pointer">
+        <div class="track w-full h-20 flex justify-start items-center gap-3 border-b-2 p-3 group cursor-pointer" detaset-index="${index}">
             <div class="relative">
                 <div class="rounded-full overflow-hidden">
                     <img src="${item.cover}" alt="cover" class="w-16 h-16 bg-cover group-hover:brightness-50 duration-700">
@@ -182,15 +182,17 @@ function refreshPlaylist() {
             item.firstElementChild.lastElementChild.classList.add('!opacity-100');       
         });
 
-        if (item.lastElementChild.firstElementChild.innerHTML == musicList[currentMusicIndex.value].name) {
-            item.firstElementChild.firstElementChild.firstElementChild.classList.add('brightness-50');
-            item.firstElementChild.lastElementChild.classList.add('!opacity-100');
-        };
+        if(currentMusicIndex.value >= 0) {
+            if (item.lastElementChild.firstElementChild.innerHTML == musicList[currentMusicIndex.value].name) {
+                item.firstElementChild.firstElementChild.firstElementChild.classList.add('brightness-50');
+                item.firstElementChild.lastElementChild.classList.add('!opacity-100');
+            };
+        }
     });
 };
 
 playListBtn.addEventListener("click", () => {
     refreshPlaylist();
-    playListBtn.classList.toggle("last:w-full"," odd:w-1/2","first:w-1/4");
+    playListBtn.classList.toggle("*:w-full");
     playlistContainer.classList.toggle('!left-0');
 });
