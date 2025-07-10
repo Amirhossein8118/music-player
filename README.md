@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-![snapshot from app](content/snapshot/snapshot.png)
+[![snapshot from app](content/snapshot/snapshot.png "music player")](https://amirhossein8118.github.io/music-player/)
 
 ## Project Description
 
