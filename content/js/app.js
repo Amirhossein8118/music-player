@@ -47,6 +47,10 @@ let mainMusicList = [
     },
 ];
 
+window.addEventListener("load" , () => {
+    document.body.classList.add("loaded")
+})
+
 let musicList = mainMusicList.slice();
 
 var currentMusicIndex = { value: 0 };
